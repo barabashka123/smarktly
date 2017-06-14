@@ -1,0 +1,55 @@
+﻿
+<section class="topBlock">
+    <menu>
+        <ul>
+            <li ng-class="{'active': activeTab == 'ex1'}"><a ui-sref="app.main.words">Example 1</a></li>
+            <li ng-class="{'active': activeTab == 'ex2'}"><a ui-sref="app.main.tabs1">Example 2</a></li>
+            <li ng-class="{'active': activeTab == 'ex3'}"><a ui-sref="app.main.tabs2">Example 3</a></li>
+            <li ng-class="{'active': activeTab == 'ex4'}"><a ui-sref="app.main.tabs3">Example 4</a></li>
+            <li class="aa"><a ui-sref="app.tabs">Tabs</a></li>
+        </ul>
+    </menu>
+</section>
+
+<section class="bottomBlock">
+    <section class="leftBlock">
+        <ui-view></ui-view>
+    </section>
+
+    <section class="rigthBlock">
+        <div class="wrapperForm">
+            <div class="form">
+                <p class="title">Сount the number</p>            
+                <div class="line"></div>
+                <div class="wrapper">
+                    <p>Select number</p>
+                    <select ng-model="product.select" required>
+                        <option value=""  selected class="defaultSelect">--Select--</option>
+                        <option ng-repeat="i in ['one', 'two', 'three', 'four']">{{i}}</option>
+                    </select>
+                </div>
+                <div class="wrapper">
+                    <p>Enter the number</p>
+                    <input type="number" ng-model="product.productivity"
+                           ng-class="{'invalid': product.productivity < 0}"
+                           placeholder="20"/>
+                </div>
+                <div class="wrapper">
+                    <p>Enter the number</p>
+                    <input type="number" ng-model="product.price"
+                           ng-class="{'invalid': product.price < 0}"
+                           placeholder="3000"/>
+                </div>
+                <div class="wrapper">
+                    <p>Enter the number</p>
+                    <input type="number"
+                           ng-model="product.square"
+                           ng-class="{'invalid': product.square < 0}"
+                           placeholder="10"/>
+                </div>
+                <div class="line"></div>
+                <p ng-if="profit" class="result">Number is <br> <span class="profit">{{profit}}</span>
+            </div>
+        </div>
+    </section>
+</section>
